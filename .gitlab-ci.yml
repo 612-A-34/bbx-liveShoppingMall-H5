@@ -1,0 +1,43 @@
+# This file is a template, and might need editing before it works on your project.12
+
+variables:
+  #CI_REGISTRY_IMAGE: "harbor.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME"
+  CI_REGISTRY: "registry.baidubce.com/org"
+  APPNAME: $CI_PROJECT_NAME 
+
+
+stages:
+  - tag-build
+  - tag-deploy
+  - build 
+  - dev-deploy
+ 
+
+
+#测试环境
+docker-build-master:
+  # Official docker image.
+  #image: docker:latest
+  stage: build
+  script:
+    - CI_REGISTRY_IMAGE="${CI_REGISTRY}/${APPNAME}:${CI_COMMIT_BRANCH}"
+    - echo " $CI_PROJECT_NAME  开始构建"
+    #- cnpm install
+    #- npm run build
+    - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+    - docker push "$CI_REGISTRY_IMAGE"
+  only:
+    - master
+
+
+
+
+docker-deyploy:
+  stage: dev-deploy
+  script:
+    - CI_REGISTRY_IMAGE="${CI_REGISTRY}/${APPNAME}:${CI_COMMIT_BRANCH}" 
+    #- #echo "更新镜像： docker pull $CI_REGISTRY_IMAGE " && ssh 192.168.64.4 "docker pull $CI_REGISTRY_IMAGE "  
+    - echo "更新镜像，并重启${APPNAME}  服务："
+    - ssh root@120.78.168.91 " docker rm -f ${APPNAME}; docker run --name ${APPNAME} --restart=always --pull=always  -d  -v /etc/localtime:/etc/localtime  -p 8000:80  $CI_REGISTRY_IMAGE   "
+  only:
+    - master

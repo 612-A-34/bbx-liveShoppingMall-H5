@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <title>
+        模板页
+    </title>
+</head>
+<style>
+    /* 这是样式 */
+    html{
+        font-size:24px;
+        /* font-size:62.5%; */
+    }
+    .pageList{
+        /* font-size:2.4rem; */
+    }
+    .pageList .box{
+        border-radius:0.4rem;
+        background:white;
+        margin-top:1rem;
+        padding:0.15rem;
+    }
+    .pageList .title{
+        color:#666666;
+        /* font-size:1.6rem; */
+        border-radius: 0.4rem;
+    }
+    .pageList .title::before{
+        content:"";
+        /* font-size:0.32rem; */
+        line-height:0.42rem;
+        width:0.4rem;
+        height:0.42rem;
+        overflow:hidden;
+        border-radius: 0.2rem;
+        background-color: #E83D46;
+        padding-right:0.4rem;
+        margin-right:0.28rem;
+    }
+    .pageList .list{
+        overflow: hidden;
+        list-style: none;
+        margin:0;
+        padding:0;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .pageList .list li{
+        width:50%;
+        text-align: center;
+        color:#333333;
+        margin:1.2rem 0;
+        font-family: "PingFang SC";
+        font-weight:bold;
+        /* font-size:2.4rem; */
+    }
+    .pageList .list .box-right{
+        border-left:1px solid #ccc;
+    }
+    /* 详情页的样式 */
+    .pageDetails .list{
+        overflow:hidden;
+        list-style: none;
+        margin:0;
+        padding:0;
+    }
+    .pageDetails {
+        font-size:14px;
+    }
+    .pageDetails .item{
+        
+        border-bottom:1px solid #ccc;
+        padding:1rem;
+        overflow: hidden;
+    }
+    .pageDetails .name{
+        float:left;
+    }
+    .pageDetails .num{
+        float: right;
+    }
+</style>
+<body style="background-color: #ededed;" >
+    <!-- 这是列表页 -->
+    <div class="pageList">
+        <div class="box">
+            <div class="title">我的主播</div>
+            <ol class="list">
+                <li class="box-left">58</li>
+                <li class="box-right">100086</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <div class="title">我的用户</div>
+            <ol class="list">
+                <li class="box-left">58</li>
+                <li class="box-right">100086</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <div class="title">我的销售权益</div>
+            <ol class="list">
+                <li class="box-left">58</li>
+                <li class="box-right">100086</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <div class="title">我的服务商</div>
+            <ol class="list">
+                <li class="box-left">58</li>
+                <li class="box-right">100086</li>
+            </ol>
+        </div>
+
+        <div class="box">
+            <div class="title">我的收益</div>
+            <ol class="list">
+                <li class="box-left">58</li>
+                <li class="box-right">100086</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 详情页的 -->
+    <!-- <div class="pageDetails">
+        <ul class="list">
+            <li class="item">
+                <span class="name">afafafaf(创业主播)</span><b class="num">12313</b>
+            </li>
+            <li class="item">
+                <span class="name">afafafaf(创业主播)</span><b class="num">12313</b>
+            </li>
+        </ul>
+    </div> -->
+</body>
+<script>
+//     (function (doc, win) {
+//   var docEl = doc.documentElement,
+//     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+//     recalc = function () {
+//       var clientWidth = docEl.clientWidth;
+//       if (!clientWidth) return;
+//       docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+//     };
+//   recalc(); 
+//   if (!doc.addEventListener) return;
+//   win.addEventListener(resizeEvt, recalc, false);
+// })(document, window)
+</script>
+
+</html>
