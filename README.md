@@ -1,4 +1,6 @@
 # weblive
+## 项目名称及简介
+ 直播商城的直播页(h5)
 
 ## Project setup
 ```
