@@ -4,7 +4,7 @@
 ###  使用阿里直播服务
 ###  阿里直播服务相关文档：https://help.aliyun.com/document_detail/462720.html
 ###  部分UI图: 代码文件夹中
-###  此项目暂时没有做没有做礼物特效
+###  此项目包含弹幕功能，暂时没有做没有做礼物特效
  
 
 ## Project setup
